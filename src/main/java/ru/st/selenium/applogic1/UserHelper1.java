@@ -59,4 +59,10 @@ public class UserHelper1 extends DriverBasedHelper implements UserHelper {
         .getFirstSelectedOption().getText());
   }
 
+@Override
+public void createUser(User user) {
+	// TODO Auto-generated method stub
+	
+}
+
 }

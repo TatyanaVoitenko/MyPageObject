@@ -25,6 +25,9 @@ public class UserManagementPage extends InternalPage {
   @FindBy(name = "password2")
   private WebElement password2Field;
   
+  @FindBy (name="submit")
+  private WebElement submitButton;
+  
   private Select permissionDropdown() {
     return new Select(driver.findElement(By.name("permission")));
   }
@@ -60,7 +63,11 @@ public class UserManagementPage extends InternalPage {
   public String getRole() {
     return permissionDropdown().getFirstSelectedOption().getText();
   }
-
+  public UserManagementPage clickSubmitButton() {
+		submitButton.click();
+		return this;
+	}
+  
   public UserManagementPage setRole(String text) {
     permissionDropdown().selectByVisibleText(text);
     return this;
@@ -72,4 +79,6 @@ public class UserManagementPage extends InternalPage {
     wait.until(presenceOfElementLocated(By.cssSelector("div.content h3")));
     return this;
   }
+
+
 }

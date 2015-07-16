@@ -35,4 +35,10 @@ public class UserHelper0 implements UserHelper {
     return user == null;
   }
 
+@Override
+public void createUser(User user) {
+	// TODO Auto-generated method stub
+	
+}
+
 }
