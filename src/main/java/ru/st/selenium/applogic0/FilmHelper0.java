@@ -4,6 +4,7 @@ import java.util.List;
 
 import ru.st.selenium.applogic.FilmHelper;
 import ru.st.selenium.model.Film;
+import ru.st.selenium.pages.FilmViewPage;
 
 public class FilmHelper0 implements FilmHelper {
 
@@ -24,5 +25,10 @@ public class FilmHelper0 implements FilmHelper {
     // TODO Auto-generated method stub
     return null;
   }
+
+
+
+
+
 
 }

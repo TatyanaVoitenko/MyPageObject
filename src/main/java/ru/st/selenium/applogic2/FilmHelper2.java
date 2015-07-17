@@ -4,6 +4,9 @@ import java.util.List;
 
 import ru.st.selenium.applogic.FilmHelper;
 import ru.st.selenium.model.Film;
+import ru.st.selenium.model.User;
+import ru.st.selenium.pages.FilmViewPage;
+import ru.st.selenium.pages.UserProfilePage;
 
 public class FilmHelper2 extends DriverBasedHelper implements FilmHelper {
 
@@ -13,10 +16,24 @@ public class FilmHelper2 extends DriverBasedHelper implements FilmHelper {
 
   @Override
   public void create(Film film) {
-    // TODO Auto-generated method stub
+    pages.filmListPage.ensurePageLoaded()
+.clickHomeProfilePage()
+.clickAddButton()
+.setTitleField(film.getTitle())
+.setImdbFiledField(film.getImdb())
+.setYearFiledField(film.getYear())
+.setNotesField(film.getNotes())
+.clickSubmitButton();
+ }
 
-  }
-
+  //@Override
+  public String getFilmTitle() {
+	 
+	FilmViewPage filmPage = pages.filmViewPage.ensureFilmViewPageLoaded();
+  	return filmViewPage.getTitle();
+   	}
+  
+  
   @Override
   public void delete(Film film) {
     // TODO Auto-generated method stub
@@ -28,5 +45,7 @@ public class FilmHelper2 extends DriverBasedHelper implements FilmHelper {
     // TODO Auto-generated method stub
     return null;
   }
+
+
 
 }
